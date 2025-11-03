@@ -1,8 +1,11 @@
 {
 	"servers": {
-		"my-mcp-server-counter": {
-			"url": "http://127.0.0.1:8000/sse",
-			"type": "http"
+		"crate_peeker_v1": {
+			"type": "stdio",
+			"command": "cargo",
+			"args": [
+				"run"
+			]
 		}
 	},
 	"inputs": []
