@@ -2,7 +2,7 @@
 	"servers": {
 		"crate_peeker_v1": {
 			"type": "stdio",
-			"command": "cargo",
+			"command": "/home/alex/.cargo/bin/cargo",
 			"args": [
 				"run"
 			]
