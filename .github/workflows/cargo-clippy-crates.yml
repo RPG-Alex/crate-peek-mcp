@@ -1,0 +1,15 @@
+name: Clippy
+
+on:
+  push:
+    paths:
+      - 'crates/**'
+  pull_request:
+    paths:
+      - 'crates/**'
+
+jobs:
+  clippy:
+    uses: ./.github/workflows/cargo-clippy-template.yml
+    with:
+      path: '.'
