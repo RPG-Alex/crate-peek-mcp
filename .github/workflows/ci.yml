@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: dtolnay/rust-toolchain@stable
+      - uses: dtolnay/rust-toolchain@master
         with: { components: rustfmt }
       - uses: Swatinem/rust-cache@v2
       - run: cargo fmt --all -- --check
@@ -26,9 +26,11 @@ jobs:
           - { name: crate-peek-server }
     steps:
       - uses: actions/checkout@v4
-      - uses: dtolnay/rust-toolchain@stable
+      - uses: dtolnay/rust-toolchain@master
         with: { components: clippy }
       - uses: Swatinem/rust-cache@v2
+      - name: Unify windows-sys version (match local)
+        run: cargo update -p windows-sys --precise 0.61.2
       - name: Clippy (deny warnings)
         run: cargo clippy -p ${{ matrix.pkg.name }} --all-targets -- -D warnings
 
@@ -43,7 +45,7 @@ jobs:
           - { name: crate-peek-server }
     steps:
       - uses: actions/checkout@v4
-      - uses: dtolnay/rust-toolchain@stable
+      - uses: dtolnay/rust-toolchain@master
       - uses: Swatinem/rust-cache@v2
       - run: cargo test -p ${{ matrix.pkg.name }} --all-targets --no-fail-fast
 
@@ -60,7 +62,7 @@ jobs:
       RUSTDOCFLAGS: -D warnings
     steps:
       - uses: actions/checkout@v4
-      - uses: dtolnay/rust-toolchain@stable
+      - uses: dtolnay/rust-toolchain@master
       - uses: Swatinem/rust-cache@v2
       - run: cargo doc -p ${{ matrix.pkg.name }} --no-deps
 
@@ -70,7 +72,7 @@ jobs:
     needs: [fmt, clippy, test, doc]
     steps:
       - uses: actions/checkout@v4
-      - uses: dtolnay/rust-toolchain@stable
+      - uses: dtolnay/rust-toolchain@master
       - uses: Swatinem/rust-cache@v2
       - run: cargo build -p crate-peek-server --release
       - name: Upload binary
