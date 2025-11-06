@@ -1,10 +1,9 @@
+//! Entry point for the MCP server
+
 use anyhow::Result;
+use crate_peek_server::CratePeek;
 use rmcp::{ServiceExt, transport::stdio};
 use tracing_subscriber::{self, EnvFilter};
-
-mod lib;
-// change this when lib is updated
-use lib::Counter;
 
 #[tokio::main]
 async fn main() -> Result<()> {
@@ -18,7 +17,7 @@ async fn main() -> Result<()> {
     tracing::info!("Starting MCP server");
 
     // Create an instance of our counter router
-    let service = Counter::new().serve(stdio()).await.inspect_err(|e| {
+    let service = CratePeek::new().serve(stdio()).await.inspect_err(|e| {
         tracing::error!("serving error: {:?}", e);
     })?;
 

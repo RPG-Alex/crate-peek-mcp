@@ -2,6 +2,13 @@
 name = "crate-peek-core"
 version = "0.1.0"
 edition = "2024"
+license = "MIT"
+repository = "https://github.com/rpg-alex/crate_peek_mcp"
+description = "Core functionality for the crate-peek MCP project"
+authors = ["RPG Alex"]
+readme = "README.md"
+keywords = ["mcp", "rust", "tools", "crate", "introspection"]
+categories = ["development-tools", "parsing", "command-line-utilities","documentation"]
 
 [dependencies]
 anyhow = { workspace = true }
@@ -10,3 +17,5 @@ serde_json = { workspace = true }
 schemars = { workspace = true }
 cargo_metadata = "0.23.0"
 
+[lints]
+workspace = true

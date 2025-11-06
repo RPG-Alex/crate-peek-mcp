@@ -1,5 +1,5 @@
 [workspace]
-members = ["crates/*"]
+members = ["crates/core","crates/server"]
 resolver = "2"
 
 [workspace.package]
@@ -21,3 +21,26 @@ tokio = { version = "1.48.0", features = [
 tokio-util = { version = "0.7.17", features = ["full"] }
 tracing = "0.1.41"
 tracing-subscriber = { version = "0.3.20", features = ["env-filter"] }
+
+
+[workspace.lints.rust]
+missing_docs = "forbid"
+unreachable_patterns = "forbid"
+unused_must_use = "forbid"
+unused_import_braces = "forbid"
+unconditional_recursion = "forbid"
+unused_macro_rules = "forbid"
+deprecated = "deny"
+unsafe_code = "forbid"
+
+[workspace.lints.clippy]
+unreadable_literal = "allow"
+missing_panics_doc = "allow"
+struct_excessive_bools = "allow"
+should_panic_without_expect = "allow"
+clone_on_copy = "forbid"
+unwrap_used = "deny"
+expect_used = "deny"
+pedantic = { level = "deny", priority = -1 }
+cargo    = { level = "deny", priority = -1 }
+nursery  = { level = "deny", priority = -1 }
