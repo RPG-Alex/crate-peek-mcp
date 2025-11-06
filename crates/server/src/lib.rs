@@ -3,12 +3,11 @@ use rmcp::{
     ErrorData as McpError, RoleServer, ServerHandler,
     handler::server::router::{prompt::PromptRouter, tool::ToolRouter},
     model::*,
-    prompt_handler, prompt_router,serde_json,
+    prompt_handler, prompt_router, serde_json,
     service::RequestContext,
     tool, tool_handler, tool_router,
 };
 use serde_json::json;
-
 
 /// Structure for containing the routes for the server
 #[derive(Clone)]

@@ -1,1 +1,2 @@
-//! Utility for identifying and generating documentation for crates in a project's `Cargo.toml` dependency list.
+//! Utility for identifying and generating documentation for crates in a
+//! project's `Cargo.toml` dependency list.
