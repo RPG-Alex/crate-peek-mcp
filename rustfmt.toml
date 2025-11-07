@@ -14,4 +14,4 @@ force_multiline_blocks = true
 fn_single_line = false
 where_single_line = false
 format_strings = true
-reorder_impl_items = true 
+reorder_impl_items = true

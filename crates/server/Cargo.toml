@@ -11,7 +11,7 @@ keywords = ["mcp", "server", "rust", "llm", "docs"]
 categories = ["development-tools", "network-programming"]
 
 [dependencies]
-crate-peek-core = {path = "../core"}
+crate-peek-core = { path = "../core" }
 rmcp = { workspace = true, features = ["server", "transport-io"] }
 tokio = { workspace = true }
 tokio-util = { workspace = true }

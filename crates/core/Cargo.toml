@@ -8,7 +8,12 @@ description = "Core functionality for the crate-peek MCP project"
 authors = ["RPG Alex"]
 readme = "README.md"
 keywords = ["mcp", "rust", "tools", "crate", "introspection"]
-categories = ["development-tools", "parsing", "command-line-utilities","documentation"]
+categories = [
+  "development-tools",
+  "parsing",
+  "command-line-utilities",
+  "documentation",
+]
 
 [dependencies]
 anyhow = { workspace = true }
