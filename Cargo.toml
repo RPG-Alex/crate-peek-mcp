@@ -44,4 +44,4 @@ expect_used = "deny"
 pedantic = { level = "deny", priority = -1 }
 cargo    = { level = "deny", priority = -1 }
 nursery  = { level = "deny", priority = -1 }
-
+multiple_crate_versions = "allow"

@@ -4,7 +4,9 @@
 			"type": "stdio",
 			"command": "/home/alex/.cargo/bin/cargo",
 			"args": [
-				"run"
+				"run",
+				"-p",
+				"crate-peek-server"
 			]
 		}
 	},
